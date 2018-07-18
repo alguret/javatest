@@ -69,7 +69,7 @@ public class OwnArray {
     public static String concatS(String[] arr) {
         StringBuilder total = new StringBuilder();
         for (String elem : arr) {
-            if(elem.contains("S")) {
+            if (elem.contains("S")) {
                 elem = elem.replace("S", "V");
                 total.append(elem);
             }
@@ -80,8 +80,9 @@ public class OwnArray {
     //сортировка пузырьком
     public static void sortBubble(int[] arr) {
         int cycle = 0;
-        boolean isSortTriggered = false;
+        boolean isSortTriggered;
         do {
+            isSortTriggered = false;
             for (int i = 1; i < arr.length; i++) {
                 if (arr[i - 1] > arr[i]) {
                     int temp = arr[i];
@@ -91,8 +92,7 @@ public class OwnArray {
                 }
             }
             cycle++;
-
-        } while (cycle < arr.length || !isSortTriggered);
+        } while (cycle < arr.length && isSortTriggered);
     }
 
     public static UserNumber parseNumber(String number) throws Exception {
